@@ -2,7 +2,7 @@ import React from 'react';
 import { Card, CardContent, CardDescription, CardHeader, CardTitle } from '@/components/ui/card';
 import { Badge } from '@/components/ui/badge';
 import { Button } from '@/components/ui/button';
-import { useAuth } from '@/contexts/AuthContext';
+
 import { useNavigate } from 'react-router-dom';
 import {
   Users,
@@ -19,7 +19,7 @@ import {
 } from 'lucide-react';
 
 const AdminDashboard: React.FC = () => {
-  const { whatsappStatus } = useAuth();
+  const whatsappStatus = { connected: false }; // Mock status
   const navigate = useNavigate();
 
   // Mock data - replace with real API calls to GOWA backend

@@ -21,7 +21,7 @@ import {
   SidebarTrigger,
   useSidebar
 } from "@/components/ui/sidebar";
-import { useAuth } from '@/contexts/AuthContext';
+
 import { Button } from '@/components/ui/button';
 
 const adminItems = [
@@ -40,11 +40,11 @@ const userItems = [
 
 export const AppSidebar: React.FC = () => {
   const { state } = useSidebar();
-  const { user, logout } = useAuth();
+  const { user, logout } = { user: { role: 'admin', username: 'admin', email: 'admin@gowa.com' }, logout: () => {} };
   const location = useLocation();
   const currentPath = location.pathname;
 
-  const items = user?.role === 'admin' ? adminItems : userItems;
+  const items = adminItems; // Always show admin items
   const isCollapsed = state === 'collapsed';
   
   const isActive = (path: string) => currentPath === path;
