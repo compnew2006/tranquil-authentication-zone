@@ -14,14 +14,17 @@ import Chat from "./pages/Chat";
 import WhatsAppConnect from "./pages/WhatsAppConnect";
 import NotFound from "./pages/NotFound";
 
-const queryClient = new QueryClient();
+
 
 const ProtectedRoute = ({ children, adminOnly = false }: { children: React.ReactNode; adminOnly?: boolean }) => {
   // Temporarily bypass auth for now
   return <>{children}</>;
 };
 
-const App = () => (
+const App = () => {
+  const queryClient = new QueryClient();
+  
+  return (
   <QueryClientProvider client={queryClient}>
     <ThemeProvider>
       <TooltipProvider>
@@ -44,6 +47,7 @@ const App = () => (
         </TooltipProvider>
     </ThemeProvider>
   </QueryClientProvider>
-);
+  );
+};
 
 export default App;
