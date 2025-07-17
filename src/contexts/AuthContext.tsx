@@ -95,13 +95,11 @@ export const AuthProvider: React.FC<{ children: React.ReactNode }> = ({ children
   // Test API access with credentials
   const testApiAccess = async (username: string, password: string): Promise<boolean> => {
     try {
-      // Temporarily set credentials for testing
-      const originalUser = import.meta.env.VITE_GOWA_BASIC_AUTH_USER;
-      const originalPass = import.meta.env.VITE_GOWA_BASIC_AUTH_PASS;
-
       // Create a test API client with provided credentials
       const testAuth = btoa(`${username}:${password}`);
-      const response = await fetch(`${import.meta.env.VITE_GOWA_API_URL || 'http://localhost:3000'}/app/status`, {
+      const apiUrl = import.meta.env.VITE_GOWA_API_URL || 'http://localhost:3000';
+      
+      const response = await fetch(`${apiUrl}/app/status`, {
         headers: {
           'Authorization': `Basic ${testAuth}`,
           'Content-Type': 'application/json'
