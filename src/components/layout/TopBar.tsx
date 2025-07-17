@@ -10,11 +10,11 @@ import {
 } from '@/components/ui/dropdown-menu';
 import { Badge } from '@/components/ui/badge';
 import { useTheme } from '@/contexts/ThemeContext';
-
+import { useAuth } from '@/contexts/AuthContext';
 
 export const TopBar: React.FC = () => {
   const { theme, toggleTheme } = useTheme();
-  const { user, logout } = { user: { username: 'admin', role: 'admin', email: 'admin@gowa.com' }, logout: () => {} };
+  const { user, logout } = useAuth();
 
   return (
     <header className="h-16 border-b border-border bg-card/50 backdrop-blur supports-[backdrop-filter]:bg-card/20">
