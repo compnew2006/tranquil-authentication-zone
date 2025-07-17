@@ -1,0 +1,139 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+/* Modern Professional Design System for GOWA Frontend */
+
+@layer base {
+  :root {
+    /* Core Brand Colors */
+    --primary: 216 100% 50%;        /* Modern Blue */
+    --primary-foreground: 0 0% 98%;
+    --primary-muted: 216 80% 90%;
+    
+    /* Secondary & Accent */
+    --secondary: 262 83% 58%;       /* Purple Accent */
+    --secondary-foreground: 0 0% 98%;
+    --accent: 142 76% 36%;          /* Success Green */
+    --accent-foreground: 0 0% 98%;
+    
+    /* Background System */
+    --background: 0 0% 100%;
+    --foreground: 222 84% 5%;
+    --surface: 0 0% 99%;
+    --surface-variant: 220 14% 96%;
+    
+    /* Card & UI Components */
+    --card: 0 0% 100%;
+    --card-foreground: 222 84% 5%;
+    --popover: 0 0% 100%;
+    --popover-foreground: 222 84% 5%;
+    
+    /* Text & Content */
+    --muted: 220 14% 96%;
+    --muted-foreground: 220 9% 46%;
+    --border: 220 13% 91%;
+    --input: 220 13% 91%;
+    --ring: 216 100% 50%;
+    
+    /* Status Colors */
+    --destructive: 0 84% 60%;
+    --destructive-foreground: 0 0% 98%;
+    --warning: 38 92% 50%;
+    --warning-foreground: 0 0% 98%;
+    --success: 142 76% 36%;
+    --success-foreground: 0 0% 98%;
+    
+    /* Sidebar System */
+    --sidebar-background: 222 84% 5%;
+    --sidebar-foreground: 210 40% 98%;
+    --sidebar-primary: 216 100% 50%;
+    --sidebar-primary-foreground: 0 0% 98%;
+    --sidebar-accent: 222 47% 11%;
+    --sidebar-accent-foreground: 210 40% 98%;
+    --sidebar-border: 217 33% 18%;
+    --sidebar-ring: 216 100% 50%;
+    
+    /* Design Tokens */
+    --radius: 0.75rem;
+    --shadow-sm: 0 1px 2px 0 hsl(var(--foreground) / 0.05);
+    --shadow: 0 4px 6px -1px hsl(var(--foreground) / 0.1);
+    --shadow-lg: 0 10px 15px -3px hsl(var(--foreground) / 0.1);
+    --shadow-glow: 0 0 20px hsl(var(--primary) / 0.3);
+    
+    /* Gradients */
+    --gradient-primary: linear-gradient(135deg, hsl(var(--primary)), hsl(var(--secondary)));
+    --gradient-surface: linear-gradient(180deg, hsl(var(--background)), hsl(var(--surface)));
+    --gradient-card: linear-gradient(145deg, hsl(var(--card)), hsl(var(--surface-variant)));
+    
+    /* Animations */
+    --transition-all: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+    --transition-fast: all 0.15s ease-out;
+  }
+
+  .dark {
+    /* Dark Mode Colors */
+    --background: 222 84% 5%;
+    --foreground: 210 40% 98%;
+    --surface: 222 47% 11%;
+    --surface-variant: 217 33% 17%;
+    
+    /* Card & UI Components */
+    --card: 222 47% 11%;
+    --card-foreground: 210 40% 98%;
+    --popover: 222 47% 11%;
+    --popover-foreground: 210 40% 98%;
+    
+    /* Primary in Dark */
+    --primary: 216 100% 60%;
+    --primary-foreground: 210 40% 98%;
+    --primary-muted: 216 50% 25%;
+    
+    /* Secondary & Accent in Dark */
+    --secondary: 262 83% 65%;
+    --secondary-foreground: 222 84% 5%;
+    --accent: 142 69% 58%;
+    --accent-foreground: 222 84% 5%;
+    
+    /* Text & Content */
+    --muted: 217 33% 17%;
+    --muted-foreground: 215 20% 65%;
+    --border: 217 33% 17%;
+    --input: 217 33% 17%;
+    --ring: 216 100% 60%;
+    
+    /* Status Colors in Dark */
+    --destructive: 0 63% 31%;
+    --destructive-foreground: 210 40% 98%;
+    --warning: 38 92% 50%;
+    --warning-foreground: 222 84% 5%;
+    --success: 142 69% 58%;
+    --success-foreground: 222 84% 5%;
+    
+    /* Sidebar in Dark */
+    --sidebar-background: 222 84% 5%;
+    --sidebar-foreground: 210 40% 98%;
+    --sidebar-primary: 216 100% 60%;
+    --sidebar-primary-foreground: 222 84% 5%;
+    --sidebar-accent: 222 47% 11%;
+    --sidebar-accent-foreground: 210 40% 98%;
+    --sidebar-border: 217 33% 17%;
+    --sidebar-ring: 216 100% 60%;
+    
+    /* Dark Gradients */
+    --gradient-primary: linear-gradient(135deg, hsl(var(--primary)), hsl(var(--secondary)));
+    --gradient-surface: linear-gradient(180deg, hsl(var(--background)), hsl(var(--surface)));
+    --gradient-card: linear-gradient(145deg, hsl(var(--card)), hsl(var(--surface-variant)));
+    --shadow-glow: 0 0 30px hsl(var(--primary) / 0.4);
+  }
+}
+
+@layer base {
+  * {
+    @apply border-border;
+  }
+
+  body {
+    @apply bg-background text-foreground;
+  }
+}
