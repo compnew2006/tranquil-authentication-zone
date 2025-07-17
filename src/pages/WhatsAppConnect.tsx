@@ -4,7 +4,7 @@ import { Button } from '@/components/ui/button';
 import { Input } from '@/components/ui/input';
 import { Badge } from '@/components/ui/badge';
 import { useToast } from '@/hooks/use-toast';
-import { useAuth } from '@/contexts/AuthContext';
+
 import { useWhatsAppLogin, useAppStatus } from '@/hooks/useGowaApi';
 import { 
   Smartphone, 
@@ -27,7 +27,7 @@ const WhatsAppConnect: React.FC = () => {
   const [countdown, setCountdown] = useState(0);
   
   const { toast } = useToast();
-  const { refreshWhatsAppStatus } = useAuth();
+  const refreshWhatsAppStatus = () => {}; // Mock function
   const { data: appStatus, isLoading: statusLoading } = useAppStatus();
   const { login, loginWithCode, logout, isLoading, error, loginData, loginWithCodeData } = useWhatsAppLogin();
   const navigate = useNavigate();
